@@ -1,0 +1,40 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+}
+
+.container {
+  background-color: #282;
+  display: grid;
+  grid-template-columns: repeat(6, 15dvw);
+  grid-column-gap: 1em;
+  flex-wrap: wrap;
+}
+
+.item {
+  background-color: #227;
+  grid-column: span 2;
+  display: inline-block;
+  min-width: 30vw;
+  min-width: 30dvw;
+  margin: 1em;
+}
+
+.item:last-child:nth-child(3n+1) {
+  background-color: #772;
+  grid-column-end: 5;
+}
+
+.item:last-child:nth-child(3n+2) {
+  background-color: #727;
+  grid-column-end: -2;
+}
+
+.item:nth-last-child(2):nth-child(3n+1) {
+  background-color: #722;
+  grid-column-end: 4;
+}
