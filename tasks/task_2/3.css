@@ -1,0 +1,47 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background-color: #000;
+  height: 400px;
+  display: grid;
+  grid-template-areas:
+    "a a b c"
+    "d d e e";
+  gap: 1rem;
+}
+
+main div {
+  border-radius: .25em;
+}
+
+main div:nth-child(1) {
+  background-color: #199;
+  grid-area: a;
+}
+
+
+main div:nth-child(2) {
+  background-color: #919;
+  grid-area: b;
+}
+
+
+main div:nth-child(3) {
+  background-color: #991;
+  grid-area: c;
+}
+
+
+main div:nth-child(4) {
+  background-color: #119;
+  grid-area: d;
+}
+
+
+main div:nth-child(5) {
+  background-color: #911;
+  grid-area: e;
+}
