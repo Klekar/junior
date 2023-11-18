@@ -7,6 +7,7 @@
   overflow-wrap: break-word;
   max-width: 40rem;
   grid-template-rows: auto auto auto auto;
+  grid-template-columns: 100%;
   grid-template-areas:
     "a"
     "b"
