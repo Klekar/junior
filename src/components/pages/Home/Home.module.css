@@ -3,6 +3,20 @@
   @apply border border-gray-light-1;
   @apply rounded-lg;
   @apply shadow-lg;
+  @apply text-xs;
 
-  width: 70dvw;
+  width: max(70dvw, 16rem);
+}
+
+
+@screen sm {
+  .home {
+    @apply text-sm;
+  }
+}
+
+@screen lg {
+  .home {
+    @apply text-base;
+  }
 }
