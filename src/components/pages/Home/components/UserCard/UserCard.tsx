@@ -1,9 +1,9 @@
 import { ReactElement } from 'react';
 import { Button, Icon } from '@/components/shared';
-import User from '@/model/User';
+import IUser from '@/model/IUser';
 import style from './UserCard.module.css';
 
-const UserCard = ({ user }: { user: User }): ReactElement => {
+const UserCard = ({ user }: { user: IUser }): ReactElement => {
   const { lng, lat } = user.address.geo;
   return <div className={[style.container].join(' ')}>
     <h3>{user.name}</h3>
