@@ -3,6 +3,9 @@ html, body {
   padding: 0;
 }
 
+/*
+  jste první, u koho vidím použití ploch v mřížce
+*/
 main {
   background-color: #000;
   height: 400px;
@@ -13,6 +16,9 @@ main {
   gap: 1rem;
 }
 
+/*
+  Všeobecně se doporučuje používat úvodní nuly
+*/
 main div {
   border-radius: .25em;
 }

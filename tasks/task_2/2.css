@@ -7,6 +7,9 @@ body {
   background-color: #000;
 }
 
+/*
+  Tohle je spíše flex
+*/
 .container {
   background-color: #282;
   display: grid;
@@ -20,6 +23,9 @@ body {
   min-width: 30dvw;
 }
 
+/*
+  Pěkné, leč v případě flexu zbytečné
+*/
 .item:last-child:nth-child(3n+1) {
   background-color: #772;
   grid-column-end: 5;

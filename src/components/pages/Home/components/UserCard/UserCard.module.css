@@ -4,7 +4,10 @@
   @apply rounded-lg;
   @apply shadow-lg;
   @apply grid;
-  overflow-wrap: break-word;
+  /*
+    v zadání bylo používat tailwind, tyhle věci se dají dělat tailwindem.
+    pro zlepšení čitelnosti bych tady dal prázdný řádek.
+  */
   max-width: 40rem;
   grid-template-rows: auto auto auto auto;
   grid-template-columns: 100%;
@@ -39,6 +42,10 @@
   @apply inline-block;
 }
 
+/*
+  Výborně, responzivita! Akorát se to dá dělat přímo v komponentě a nemusíte
+  kombinovat tailwind a pure css
+*/
 @screen sm {
   .container {
     font-size: 1em;

@@ -1,3 +1,4 @@
+// Spíše TPivo
 type TStarobrnoMedium = {
   name: string;
   volume: number;
@@ -5,8 +6,10 @@ type TStarobrnoMedium = {
   drunkedMe: (pieces: number) => boolean;
   onStock: boolean;
   ingredients: {
+    // Record<string, string | number>;
     [key: string]: string | number;
   };
+  // obecněji boolean | undefined
   iGonnaPay: () => true | undefined;
 };
 
