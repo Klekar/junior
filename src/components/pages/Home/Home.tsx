@@ -1,12 +1,12 @@
 import { ReactElement, useState } from 'react';
 import { Icon, Button } from '@/components/shared';
-import IUser from '@/model/IUser';
+import User from '@/types/User';
 import { UserCard } from './components';
 import style from './Home.module.css';
 
 const Home = (): ReactElement => {
   // osobně preferuji genetika Array<IUser>
-  const [users, setUsers] = useState<IUser[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
 
   // fetchujeme uživatele, ne úkoly
   // lépe asynchronní funkci, pak se vyhnete promise chainingu

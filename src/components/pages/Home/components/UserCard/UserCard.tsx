@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
 import { Icon } from '@/components/shared';
-import IUser from '@/model/IUser';
+import User from '@/types/User';
 import style from './UserCard.module.css';
 
 interface IProps {
-  user: IUser;
+  user: User;
 }
 
 const UserCard = ({ user }: IProps): ReactElement => {
