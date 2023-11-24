@@ -1,48 +1,28 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import { Icon, Button } from '@/components/shared';
-import User from '@/types/User';
-import { UserCard } from './components';
+import { UserList } from './components';
+import useFetchUsers from './hooks/useFetchUsers';
 import style from './Home.module.css';
 
 const Home = (): ReactElement => {
-  // osobně preferuji genetika Array<IUser>
-  const [users, setUsers] = useState<User[]>([]);
-
-  // fetchujeme uživatele, ne úkoly
-  // lépe asynchronní funkci, pak se vyhnete promise chainingu
-  // nějak mi cybí info, že se to nahrává, co když to bude dlouho trvat?
-  // uživatel bude klikat jak zběsilej
-  const fetchTodos = (): void => {
-    setUsers([]);
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        // a jakou máte jistotu, že získaná data jsou ve tvaru Array<IUser>?
-        // a co chybové HTTP stavy (404)?
-        setUsers(data);
-      })
-      .catch((error) => {
-        // ale fuj, alerty! Tohle uživateli nic neřekne a vývojář nevidí celou chybu
-        alert(error?.statusCode ?? 'Could not load resources.');
-      });
-  };
+  const { fetchUsers, users, isLoading, error } = useFetchUsers();
 
   return (
     <main className={style.home}>
       <h1 className="inline-block">User list</h1>
-      <Button variant="secondary" onClick={fetchTodos} className="float-right">
-        <Icon iconName="download" className="h-5" />
+      <Button variant="secondary" onClick={fetchUsers} className="float-right" disabled={isLoading}>
+        {isLoading
+          ? <Icon iconName="more_horiz" className="h-5" />
+          : <Icon iconName="download" className="h-5" />
+        }
       </Button>
-      {/*
-        Pokud nepřijdou zádní uživatelé, zůstane tady div.
-        Spíš by si to měla ošetřit komponenta např. UserList,
-        která by buď nezobrazila, nebo ukázala karty
-      */}
-      <div>
-        {users.map((user) => <UserCard user={user} key={user.id} />)}
-      </div>
+      {error !== ''
+        ? <div>
+          Error: {error}
+        </div>
+        : undefined
+      }
+      <UserList users={users} />
     </main>
   );
 };
