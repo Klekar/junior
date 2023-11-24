@@ -24,7 +24,7 @@
 
 .container > h3 {
   @apply justify-self-center;
-  
+
   grid-area: a;
 }
 
@@ -37,6 +37,11 @@
 }
 
 .map-link {
+  @apply transition duration-default ease-in-out;
+  @apply px-4 py-2;
+  @apply text-red border-red border-solid border;
+  @apply hover:border-red-dark hover:text-red-dark hover:bg-red-light;
+  @apply rounded-full;
   @apply mt-2;
   @apply md:self-center md:justify-self-end md:mt-0;
 
