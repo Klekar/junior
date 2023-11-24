@@ -3,20 +3,12 @@
   @apply border border-gray-light-1;
   @apply rounded-lg;
   @apply shadow-lg;
-  @apply text-xs;
+  @apply text-xs sm:text-sm lg:text-base;
 
   width: max(70dvw, 16rem);
 }
 
-
-@screen sm {
-  .home {
-    @apply text-sm;
-  }
-}
-
-@screen lg {
-  .home {
-    @apply text-base;
-  }
+.loader {
+  @apply h-5 w-5 inline-block;
+  @apply border-gray border-b-transparent rounded-full border-4 border-solid animate-spin;
 }

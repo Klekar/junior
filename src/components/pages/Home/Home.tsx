@@ -10,9 +10,9 @@ const Home = (): ReactElement => {
   return (
     <main className={style.home}>
       <h1 className="inline-block">User list</h1>
-      <Button variant="secondary" onClick={fetchUsers} className="float-right" disabled={isLoading}>
+      <Button variant="secondary" onClick={fetchUsers} className="float-right h-10" disabled={isLoading}>
         {isLoading
-          ? <Icon iconName="more_horiz" className="h-5" />
+          ? <div className={style.loader} />
           : <Icon iconName="download" className="h-5" />
         }
       </Button>
