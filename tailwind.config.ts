@@ -30,6 +30,7 @@ const settings = {
     maxWidth: {
       page: '1136px',
       modal: '832px',
+      '160': '40rem',
     },
     borderRadius: {
       none: 0,
@@ -91,6 +92,9 @@ const settings = {
       zIndex: {
         1: 1,
         backdrop: 100,
+      },
+      margin: {
+        0.5: '0.125em',
       },
       screens: {
         'max-xxs': { 'max': '390px' },

@@ -3,24 +3,28 @@
   @apply border border-gray-light-1;
   @apply rounded-lg;
   @apply shadow-lg;
-  @apply grid;
-  /*
-    v zadání bylo používat tailwind, tyhle věci se dají dělat tailwindem.
-    pro zlepšení čitelnosti bych tady dal prázdný řádek.
-  */
-  max-width: 40rem;
-  grid-template-rows: auto auto auto auto;
-  grid-template-columns: 100%;
+  @apply max-w-160;
+  @apply grid grid-cols-1 gap-x-1 justify-items-center;
+  @apply md:grid-cols-2 md:text-base md:justify-items-start;
+
+  text-wrap: balance;
   grid-template-areas:
     "a"
     "b"
     "c"
     "d";
-    row-gap: 0.2em;
-  text-wrap: balance;
+
+  @screen md {
+    grid-template-areas:
+      "a a"
+      "b d"
+      "c d";
+  }
 }
 
 .container > h3 {
+  @apply justify-self-center;
+  
   grid-area: a;
 }
 
@@ -33,33 +37,12 @@
 }
 
 .map-link {
-  margin-top: 0.5em;
+  @apply mt-2;
+  @apply md:self-center md:justify-self-end md:mt-0;
+
   grid-area: d;
 }
 
 .inline-icon {
-  @apply h-4;
-  @apply inline-block;
-}
-
-/*
-  Výborně, responzivita! Akorát se to dá dělat přímo v komponentě a nemusíte
-  kombinovat tailwind a pure css
-*/
-@screen sm {
-  .container {
-    font-size: 1em;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: 50% 50%;
-    grid-template-areas:
-      "a a"
-      "b d"
-      "c d";
-  }
-
-  .map-link {
-    align-self: center;
-    justify-self: end;
-    margin-top: 0;
-  }
+  @apply h-4 inline mb-0.5;
 }
