@@ -1,7 +1,7 @@
 import { ReactElement, useState } from 'react';
 import { Icon, Button } from '@/components/shared';
 import IUser from '@/model/IUser';
-import UserCard from './components/UserCard/UserCard';
+import { UserCard } from './components';
 import style from './Home.module.css';
 
 const Home = (): ReactElement => {
